@@ -10,7 +10,7 @@ namespace Angular2WithVS2015
         public void Test1()
         {
             IList<string> strList1 = new List<string>() {
-                                                                "One",
+                                                                "One8",
                                                                 "Two",
                                                                 "Three",
                                                                 "Four"
