@@ -1,0 +1,63 @@
+﻿
+<EmpFilter *ngIf="employees" [All]="getAllEmployee()" [Male]="getMaleEmployee()" [Female]="getFemaleEmployee()" (countradiButtonSelectionChanges)="onEmployeeCountRadioButtonChanged($event)"></EmpFilter>
+<br />
+<br />
+
+<table class="table table-striped">
+
+    <tr>
+        <th>S No.</th>
+        <th> Name</th>
+        <th>Code</th>
+        <th>Gender</th>
+        <th>Annual Salary</th>
+        <th>IsFirst</th>
+        <th>IsLast</th>
+
+        <th>IsEven</th>
+        <th>IsOdd</th>
+
+    </tr>
+
+     
+    <tr *ngFor="let employee of employees; let i = index;let isEven=even;let isOdd=odd; let isFirst=first; let islast=last;">
+        <td>
+            {{ i+1 }}
+        </td>
+        <td>
+            {{ employee.Name |uppercase | CustomPipe }}
+        </td>
+        <td>
+            {{ employee.Code }}
+        </td>
+
+        <td>
+            {{ employee.Gender }}
+        </td>
+        <td>
+            {{employee.AnualSalary |currency:'INR':True}}
+        </td>
+        <td>{{isFirst ? "This is first:" :"This is not first"}}</td>
+        <td>{{islast ? "This is Last":"This is not last"}}</td>
+
+        <td>{{isEven ? "This is even Row":"This is Odd Row"}}</td>
+        <td>{{isOdd ? "This is Odd Row":"This is Even Row"}}</td>
+
+
+    </tr>
+
+</table>
+
+
+<br>
+<br>
+<button type="button"  (click)="AddEmployee()">Add Employee</button>
+<button type="button" (click)="RemoveEmployee()">Remove Employee</button>
+
+<button type="button" *ngIf="!showdetails" (click)="clickEvent()">Click Me!</button>
+<br>
+<br>
+input the Text<input [(ngModel)]="title" type="text" />
+<br>
+<br>
+you entered<span>{{title}}</span>

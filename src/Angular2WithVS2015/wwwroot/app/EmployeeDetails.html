@@ -1,0 +1,14 @@
+﻿<div>
+    <EmployeeFilter></EmployeeFilter>
+    <br />
+    <br />
+    <table border="1" cellpadding="50" cellspacing="50" >
+        <tr *ngFor="let employee of employees;">
+            <td>{{employee.ID}}</td>
+            <td>{{employee.Name}}</td>
+            <td>{{employee.Age}}</td>
+            <td>{{employee.Gender==1?"MALE" :"Female"}}</td>
+            
+        </tr>
+    </table>
+</div>
